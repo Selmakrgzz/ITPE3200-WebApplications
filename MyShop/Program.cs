@@ -18,6 +18,10 @@ if(app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
+//Gjør det mulig at applikasjonen kan servere statiske filer som bilder direkte fra
+//mappen wwwroot uten noen ekstra kode
+app.UseStaticFiles();
+
 //Setter opp en standardrute for MVC-applikasjonen
 app.MapDefaultControllerRoute();
 

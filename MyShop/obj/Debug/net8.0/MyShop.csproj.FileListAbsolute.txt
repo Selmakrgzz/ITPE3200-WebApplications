@@ -26,3 +26,8 @@ C:\Users\Bruker\Desktop\WebApplikasjoner-ITPE3200\MyShop\MyShop\obj\Debug\net8.0
 C:\Users\Bruker\Desktop\WebApplikasjoner-ITPE3200\MyShop\MyShop\obj\Debug\net8.0\ref\MyShop.dll
 C:\Users\Bruker\Desktop\WebApplikasjoner-ITPE3200\MyShop\MyShop\obj\Debug\net8.0\MyShop.RazorAssemblyInfo.cache
 C:\Users\Bruker\Desktop\WebApplikasjoner-ITPE3200\MyShop\MyShop\obj\Debug\net8.0\MyShop.RazorAssemblyInfo.cs
+C:\Users\Bruker\Desktop\WebApplikasjoner-ITPE3200\MyShop\MyShop\bin\Debug\net8.0\MyShop.staticwebassets.runtime.json
+C:\Users\Bruker\Desktop\WebApplikasjoner-ITPE3200\MyShop\MyShop\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Bruker\Desktop\WebApplikasjoner-ITPE3200\MyShop\MyShop\obj\Debug\net8.0\scopedcss\projectbundle\MyShop.bundle.scp.css
+C:\Users\Bruker\Desktop\WebApplikasjoner-ITPE3200\MyShop\MyShop\bin\Debug\net8.0\package-lock.json
+C:\Users\Bruker\Desktop\WebApplikasjoner-ITPE3200\MyShop\MyShop\bin\Debug\net8.0\package.json
