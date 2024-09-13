@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using MyShop.Models;
 //Oppretter en instans av WebApplicationBuilder som brukes til å konfigurere
 //applikasjonen. args er komamandolinje argumenter som sendes inn i applikasjonen
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 //AddControllersWithViews: Legger støtte for MVC i applikasjonen. Denne metoden
 //konfigurerer nødvendige tjenester for å håndtere kontroller og generere HTML-sider
 builder.Services. AddControllersWithViews();
+
+builder.Services.AddDbContext<ItemDbContext>(options => {
+    options.UseSqlite(
+        builder.Configuration["ConnectionStrings:ItemDbContextConnection"]);
+});
+
 //Når alle tjenester og middleware er konfigurert, bygges applikasjonen ved å kalle Build()
 //Dette returnerer en WebApplication instans som kan brukes til å konfigurere
 //pipeline-en videre og kjøre applikasjonen
