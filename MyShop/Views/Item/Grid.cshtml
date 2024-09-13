@@ -1,6 +1,45 @@
+@model ItemsViewModel
 
+<h1>List of Shop Items (@Model.CurrentViewName View)</h1>
+<a href="/Item/Table">Table View</a>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var item in Model.Items)
+    {
+        <partial name="_ItemCard" model="item" />
+    }
+</div>
+@*@model ItemsViewModel
+
+<h1>List of Shop Items (@Model.CurrentViewName View)</h1>
+<a href="/Item/Table">Table View</a>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var item in Model.Items)
+    {
+        <div class="col">
+            <div>
+                <img src="@item.ImageUrl" class="card-img-top" alt="@item.Name">
+                <div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <h5 class="text-start">
+                            <a asp-controller="Item"
+                               asp-action="Details"
+                               asp-route-id="@item.ItemId">@item.Name</a>
+                        </h5>
+                        <h5 class="text-nowrap">
+                            @item.Price.ToString("0.00 NOK")
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+*@
+@*
 <!--Specifies that the view expects a collection of Item objects-->
-@model IEnumerable<Item>
+@model IEnumerable<MyShop.Models.Item>
 
 <!--Displays the title of the view, including a dynamic part from ViewBag.CurrentViewName-->
 <h1>List of Shop Items (@ViewBag.CurrentViewName View)</h1>
@@ -30,3 +69,4 @@ row on medium and larges screens-->
         </div>
     }
 </div>
+*@

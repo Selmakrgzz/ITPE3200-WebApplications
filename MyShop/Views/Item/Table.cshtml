@@ -1,8 +1,14 @@
+@model ItemsViewModel
+
+<h1>List of Shop Items (@Model.CurrentViewName View)</h1>
+<a href="/Item/Grid">Grid View</a>
+
+<partial name="_ItemTable" model="Model.Items" />
 @*Dette angir hvilken type data som visningen forventer å motta
 @model spesifiserer at denne visningen vil bruke en modell av typen
 IEnumberable...., som er en samling(liste) av 'Item' objekter fra MyShop.Models
 Dette betyr at kontrolleren som ruter til denne visnignen sender en liste over 'Item' 
-objekter til visningen*@
+objekter til visningen
 @model IEnumerable<MyShop.Models.Item>
 
 <h1>List of Shop Items (@ViewBag.CurrentViewName View)</h1>
@@ -25,4 +31,4 @@ objekter til visningen*@
             </tr>
         }
     </table>
-</div>
+</div>*@

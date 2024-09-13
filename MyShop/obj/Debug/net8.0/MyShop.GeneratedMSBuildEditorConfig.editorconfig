@@ -22,8 +22,28 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/Item/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/Item/Grid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxHcmlkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/Item/Table.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxUYWJsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/Shared/_Carousel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DYXJvdXNlbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/Shared/_ItemCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9JdGVtQ2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/Shared/_ItemTable.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9JdGVtVGFibGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/_ViewImports.cshtml]

@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 //Importerer modeller som antas å være definert i 'MyShop.Models' navnerommet
 using MyShop.Models;
+using MyShop.ViewModels;
 
 //Definerer et navnrom som organiserer koden under MyShop.Controllers
 namespace MyShop.Controllers;
@@ -20,39 +21,142 @@ namespace MyShop.Controllers;
 //en baseklasse i ASP.NET Core MVC
 public class ItemController : Controller 
 {
+    public IActionResult Table()
+    {
+        var items = GetItems();
+        var itemsViewModel = new ItemsViewModel(items, "Table");
+        return View(itemsViewModel);
+    }
+
+    public IActionResult Grid()
+    {
+        var items = GetItems();
+        var itemsViewModel = new ItemsViewModel(items, "Grid");
+        return View(itemsViewModel);
+    }
+
     //Definerer en metode som returnerer en 'IActionResult', vanligvis en HTML-side
     //eller en JSON-data. Denne metoden vil bli kjørt når brukeren navigerer til en
     //spesifikk URL som er knyttet til denne handlingen
-    public IActionResult Table()
+    /*public IActionResult Table()
     {
-        //Her opprettes det en ny liste av typen 'Item'. 
-        //'List<Item>' er en generisk samling som kan inneholde
-        //objekter av typen 'Item'
-        var items = new List<Item>();
-        //Oppretter et nytt 'Item' objekt iom at Item er en modellklasse i MyShop.Models
-        var item1 = new Item();
-        //Setter egenskapene i item1
-        item1.ItemId = 1;
-        item1.Name = "Pizza";
-        item1.Price = 60;
+        //Henter listen over varer i GetItems-metoden
+        var items = GetItems();
+        //Oppretter en ItemsViewModel med varene og visningstypen "Table"
+        ViewBag.CurrentViewName = "Table";
+        //Returner visningen med ItemViewModel
+        return View(items);
+    }
 
-        //Her oppretter vi et Item objekt til, men på en litt anerledes måte
+    public IActionResult Grid()
+    {
+        //Henter listen over varer i GetItems-metoden
+        var items = GetItems();
+        //Oppretter en ItemsViewModel med varene og visningstypen "Grid"
+        ViewBag.CurrentViewName = "Grid";
+        //Returner visningen med ItemViewModel
+        return View(items);
+    }*/
+    
+    public IActionResult Details(int id)
+    {
+        //Henter listen over varer i GetItems-metoden
+        var items = GetItems();
+        //Finner varen med den spesifikke ID-en
+        var item = items.FirstOrDefault(i => i.ItemId == id);
+        //Hvis varen ikke finnes, returner en 404
+        if (item == null)
+            return NotFound();
+            //Returner visningen med detaljene for varen
+        return View(item);
+    }
+
+    public List<Item> GetItems()
+    {
+        //Opprett en liste for å holde varene
+        var items = new List<Item>();
+        //Legg til første vare
+        var item1 = new Item
+        {
+            ItemId = 1,
+            Name = "Pizza",
+            Price = 150,
+            Description = "Delicious Italian dish with a thin crust topped with tomato sauce, cheese, and various toppings.",
+            ImageUrl = "/images/pizza.jpg"
+        };
+
         var item2 = new Item
         {
             ItemId = 2,
             Name = "Fried Chicken Leg",
-            Price = 15
+            Price = 20,
+            Description = "Crispy and succulent chicken leg that is deep-fried to perfection, often served as a popular fast food item.",
+            ImageUrl = "/images/chickenleg.jpg"
         };
 
-        //Legger til de nye Items-objektene i items-listen
+        var item3 = new Item
+        {
+            ItemId = 3,
+            Name = "French Fries",
+            Price = 50,
+            Description = "Crispy, golden-brown potato slices seasoned with salt and often served as a popular side dish or snack.",
+            ImageUrl = "/images/frenchfries.jpg"
+        };
+
+        var item4 = new Item
+        {
+            ItemId = 4,
+            Name = "Grilled Ribs",
+            Price = 250,
+            Description = "Tender and flavorful ribs grilled to perfection, usually served with barbecue sauce.",
+            ImageUrl = "/images/ribs.jpg"
+        };
+
+        var item5 = new Item
+        {
+            ItemId = 5,
+            Name = "Tacos",
+            Price = 150,
+            Description = "Tortillas filled with various ingredients such as seasoned meat, vegetables, and salsa, folded into a delicious handheld meal.",
+            ImageUrl = "/images/tacos.jpg"
+        };
+
+        var item6 = new Item
+        {
+            ItemId = 6,
+            Name = "Fish and Chips",
+            Price = 180,
+            Description = "Classic British dish featuring battered and deep-fried fish served with thick-cut fried potatoes.",
+            ImageUrl = "/images/fishandchips.jpg"
+        };
+
+        var item7 = new Item
+        {
+            ItemId = 7,
+            Name = "Cider",
+            Price = 50,
+            Description = "Refreshing alcoholic beverage made from fermented apple juice, available in various flavors.",
+            ImageUrl = "/images/cider.jpg"
+        };
+
+        var item8 = new Item
+        {
+            ItemId = 8,
+            Name = "Coke",
+            Price = 30,
+            Description = "Popular carbonated soft drink known for its sweet and refreshing taste.",
+            ImageUrl = "/images/coke.jpg"
+        };
+
+
         items.Add(item1);
         items.Add(item2);
-
-        //Er et dynamisk objekt som brukes til å overføre data fra kontrolleren
-        //til viewet. Her settes 'CurrentViewName' til en strengverdi
-        ViewBag.CurrentViewName = "List of shop Items";
-        //Returnerer viewet til klienten med 'items'-listen som modell. 
-        //Viewet vil typisk presentere denne listen på en HTML-side.
-        return View(items);
+        items.Add(item3);
+        items.Add(item4);
+        items.Add(item5);
+        items.Add(item6);
+        items.Add(item7);
+        items.Add(item8);
+        return items;
     }
 }
