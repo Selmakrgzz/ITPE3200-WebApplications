@@ -13,6 +13,8 @@ using Microsoft.AspNetCore.Mvc;
 //Importerer modeller som antas å være definert i 'MyShop.Models' navnerommet
 using MyShop.Models;
 using MyShop.ViewModels;
+using Microsoft.EntityFrameworkCore;
+
 
 //Definerer et navnrom som organiserer koden under MyShop.Controllers
 namespace MyShop.Controllers;
@@ -30,26 +32,24 @@ public class ItemController : Controller
         _itemDbContext = ItemDbContext;
     }
 
-    public IActionResult Table()
+    public async Task<IActionResult> Table()
     {
-        List<Item> items = _itemDbContext.Items.ToList();
+        List<Item> items = await _itemDbContext.Items.ToListAsync();
         var itemsViewModel = new ItemsViewModel(items, "Table");
         return View(itemsViewModel);
     }
 
-    public IActionResult Grid()
+    public async Task<IActionResult> Grid()
     {
-        List<Item> items = _itemDbContext.Items.ToList();
+        List<Item> items = await _itemDbContext.Items.ToListAsync();
         var itemsViewModel = new ItemsViewModel(items, "Grid");
         return View(itemsViewModel);
     }
     
-    public IActionResult Details(int id)
+    public async Task<IActionResult> Details(int id)
     {
-        //Henter listen over varer i GetItems-metoden
-        List<Item> items = _itemDbContext.Items.ToList();
         //Finner varen med den spesifikke ID-en
-        var item = items.FirstOrDefault(i => i.ItemId == id);
+        var item = await _itemDbContext.Items.FirstOrDefaultAsync(i => i.ItemId == id);
         //Hvis varen ikke finnes, returner en 404
         if (item == null)
             return NotFound();
@@ -58,6 +58,7 @@ public class ItemController : Controller
     }
 
     //Når det skal opprettes et nytt element, så er det en GET-forespørsel
+    //The HttpGet version of Create() does not communicate with the database and does not need the async method
     [HttpGet]
     public IActionResult Create() //Returnerer IActionResult
     {
@@ -67,7 +68,7 @@ public class ItemController : Controller
 
     //Når brukeren sender inn skjemaet med dataene(eks nytt element) vil POST-metoden ta seg av innsending
     [HttpPost]
-    public IActionResult Create(Item item) //Tar inn et Item-objekt
+    public async Task<IActionResult> Create(Item item) //Tar inn et Item-objekt
     {
         //Denne linjen sjekker om den sendte modellen (i dette tilfellet item) er gyldig i 
         //henhold til valideringsreglene som er definert i Item-modellen.
@@ -78,7 +79,7 @@ public class ItemController : Controller
             _itemDbContext.Items.Add(item);
             //Denne metoden sparer alle de endringene som er gjort på DbContext 
             //(i dette tilfellet å legge til et nytt element). Det er her elementet faktisk lagres i databasen.
-            _itemDbContext.SaveChanges();
+            await _itemDbContext.SaveChangesAsync();
             //Etter at det nye elementet er lagt til i databasen, blir brukeren omdirigert til en annen 
             //handling (action), i dette tilfellet en metode kalt Table
             return RedirectToAction(nameof(Table));
@@ -90,10 +91,10 @@ public class ItemController : Controller
 
     //Denne metoden håndterer en GET-forespørsel for å vise et skjema som lar brukeren oppdatere et eksisterende element
     [HttpGet]
-    public IActionResult Update(int id) //Parameteren id representerer elementets ID i databasen som skal oppdateres.
+    public async Task<IActionResult> Update(int id) //Parameteren id representerer elementets ID i databasen som skal oppdateres.
     {
         //Søker i databasen etter et element med den spesifikke ID-en. Find(id) henter det aktuelle elementet fra databasen.
-        var item = _itemDbContext.Items.Find(id);
+        var item = await _itemDbContext.Items.FindAsync(id);
         //Sjekker om elementet finnes i databasen
         if (item == null)
         {
@@ -106,7 +107,7 @@ public class ItemController : Controller
 
     //Metoden mottar det oppdaterte Item-objektet via skjemaet
     [HttpPost]
-    public IActionResult Update(Item item)
+    public async Task<IActionResult> Update(Item item)
     {
         //Sjekker om det innsendte objektet oppfyller valideringsreglene
         if (ModelState.IsValid)
@@ -114,7 +115,7 @@ public class ItemController : Controller
             //Oppdaterer det eksisterende elementet i databasen med nye verdier fra item
             _itemDbContext.Items.Update(item);
             //Lagre endringene i databasen
-            _itemDbContext.SaveChanges();
+            await _itemDbContext.SaveChangesAsync();
             //Etter en vellykket oppdatering omdirigeres brukeren til en liste (Table) som viser alle elementene
             return RedirectToAction(nameof(Table));
         }
@@ -125,10 +126,10 @@ public class ItemController : Controller
 
     //Denne metoden håndterer en GET-forespørsel for å vise en bekreftelsesside for sletting
     [HttpGet]
-    public IActionResult Delete(int id) //Parameteren id representerer elementets ID som skal slettes
+    public async Task<IActionResult> Delete(int id) //Parameteren id representerer elementets ID som skal slettes
     {
         //Henter elementet som skal slettes fra databasen basert på ID
-        var item = _itemDbContext.Items.Find(id);
+        var item = await _itemDbContext.Items.FindAsync(id);
         //Sjekker om elementet finnes i databasen
         if (item == null)
         {
@@ -142,10 +143,10 @@ public class ItemController : Controller
     //Denne metoden håndterer POST-forespørselen som sendes inn når brukeren bekrefter slettingen. 
     //Den utfører selve slettingen i databasen
     [HttpPost]
-    public IActionResult DeleteConfirmed(int id) //Metoden mottar ID-en til elementet som skal slettes
+    public async Task<IActionResult> DeleteConfirmed(int id) //Metoden mottar ID-en til elementet som skal slettes
     {
         //Henter elementet fra databasen ved hjelp av ID-en
-        var item = _itemDbContext.Items.Find(id);
+        var item = await _itemDbContext.Items.FindAsync(id);
         //Sjekker om elementet finnes i databasen
         if (item == null)
         {
@@ -154,7 +155,7 @@ public class ItemController : Controller
         //Fjerner elementet fra databasen
         _itemDbContext.Items.Remove(item);
         //Lagre slettingen i databasen
-        _itemDbContext.SaveChanges();
+        await _itemDbContext.SaveChangesAsync();
         //Etter at elementet er slettet, omdirigeres brukeren til en liste som viser alle elementene
         return RedirectToAction(nameof(Table));
     }

@@ -24,5 +24,9 @@ namespace MyShop.Models
         //Dette er en property med type string. I dette tilfelle så representerer navnet ImageUrl en URL
         //som peker til et bilde relatert til varen
         public string? ImageUrl { get; set; }
+        //navigation property
+        //A navigation property in an entity class represents a relationship between entities and 
+        //allows you to navigate from one entity to related entities.
+        public virtual List<OrderItem>? OrderItems { get; set; }
     }
 }

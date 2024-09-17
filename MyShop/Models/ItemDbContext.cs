@@ -15,11 +15,21 @@ public class ItemDbContext : DbContext
 	public ItemDbContext(DbContextOptions<ItemDbContext> options) : base(options)
 	{
         //Denne linjen sørger for at databasen blir opprettet hvis den ikke allerede eksisterer. 
-        Database.EnsureCreated();
+        //Database.EnsureCreated();
 	}
 
     //Denne linjen definerer en DbSet for Item-modellen. 
     //DbSet representerer en tabell i databasen, og hver rad i tabellen vil representere en instans av Item.
     //DbSet<Item> gir deg muligheten til å utføre CRUD-operasjoner på Item-objektene i databasen.
 	public DbSet<Item> Items { get; set; }
+    public DbSet<Customer> Customers { get; set; }
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<OrderItem> OrderItems { get; set; }
+    
+    //By calling UseLazyLoadingProxies() in the OnConfiguring method, EF Core will generate
+    //proxies for your entity classes, allowing lazy loading of related entities when accessed
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseLazyLoadingProxies();
+    }
 }

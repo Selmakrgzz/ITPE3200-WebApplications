@@ -24,6 +24,8 @@ if(app.Environment.IsDevelopment())
 {
     //Hvis applikasjonen kjører i utviklingsmiljø, legger dette til en side som viser detaljerte feilmeldinger.
     app.UseDeveloperExceptionPage();
+    //Calls the seeding method to initialise the database with predefined data.
+    DBInit.Seed(app);
 }
 
 //Gjør det mulig at applikasjonen kan servere statiske filer som bilder direkte fra
