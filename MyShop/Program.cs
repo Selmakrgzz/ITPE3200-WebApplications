@@ -49,6 +49,8 @@ if(app.Environment.IsDevelopment())
 //mappen wwwroot uten noen ekstra kode
 app.UseStaticFiles();
 
+app.UseAuthentication();
+
 //Setter opp en standardrute for MVC-applikasjonen
 app.MapDefaultControllerRoute();
 
