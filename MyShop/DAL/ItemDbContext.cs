@@ -2,12 +2,13 @@
 //og funksjoner som trengs for å kommunisere med databasen og definere datamodeller.
 using Microsoft.EntityFrameworkCore;
 using MyShop.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace MyShop.DAL;
 
 //Dette definerer klassen ItemDbContext, som arver fra klassen DbContext. 
 //DbContext er en grunnleggende klasse i Entity Framework Core som gir funksjonaliteten for å jobbe med databaser.
-public class ItemDbContext : DbContext
+public class ItemDbContext : IdentityDbContext
 {
     /*Dette er en konstruktør for ItemDbContext-klassen. Konstruktøren tar et parameter, 
     options, som er av typen DbContextOptions<ItemDbContext>. Dette objektet brukes til 

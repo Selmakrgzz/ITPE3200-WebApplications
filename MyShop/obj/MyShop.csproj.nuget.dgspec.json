@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Bruker\\Desktop\\Webapplikasjoner-ITPE3200\\MyShop\\MyShop\\MyShop.csproj": {}
+    "C:\\Users\\Bruker\\Desktop\\Webapplikasjoner-ITPE3200\\MyShop\\MyShop\\MyShop.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Bruker\\Desktop\\Webapplikasjoner-ITPE3200\\MyShop\\MyShop\\MyShop.csproj": {
+    "C:\\Users\\Bruker\\Desktop\\Webapplikasjoner-ITPE3200\\MyShop\\MyShop\\MyShop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Bruker\\Desktop\\Webapplikasjoner-ITPE3200\\MyShop\\MyShop\\MyShop.csproj",
+        "projectUniqueName": "C:\\Users\\Bruker\\Desktop\\Webapplikasjoner-ITPE3200\\MyShop\\MyShop\\MyShop.csproj",
         "projectName": "MyShop",
-        "projectPath": "c:\\Users\\Bruker\\Desktop\\Webapplikasjoner-ITPE3200\\MyShop\\MyShop\\MyShop.csproj",
+        "projectPath": "C:\\Users\\Bruker\\Desktop\\Webapplikasjoner-ITPE3200\\MyShop\\MyShop\\MyShop.csproj",
         "packagesPath": "C:\\Users\\Bruker\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Bruker\\Desktop\\Webapplikasjoner-ITPE3200\\MyShop\\MyShop\\obj\\",
+        "outputPath": "C:\\Users\\Bruker\\Desktop\\Webapplikasjoner-ITPE3200\\MyShop\\MyShop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bruker\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,6 +43,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
