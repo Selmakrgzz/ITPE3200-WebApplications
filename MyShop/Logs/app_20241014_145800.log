@@ -1,0 +1,105 @@
+2024-10-14 14:58:01.654 +02:00 [INF] User profile is available. Using 'C:\Users\Bruker\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-10-14 14:58:01.740 +02:00 [INF] Now listening on: http://localhost:5092
+2024-10-14 14:58:01.742 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-14 14:58:01.743 +02:00 [INF] Hosting environment: Development
+2024-10-14 14:58:01.743 +02:00 [INF] Content root path: C:\Users\Bruker\Desktop\Webapplikasjoner-ITPE3200\MyShop\MyShop
+2024-10-14 14:58:01.765 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5092/ - null null
+2024-10-14 14:58:01.790 +02:00 [INF] Executing endpoint 'MyShop.Controllers.HomeController.Index (MyShop)'
+2024-10-14 14:58:01.796 +02:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller MyShop.Controllers.HomeController (MyShop).
+2024-10-14 14:58:01.801 +02:00 [INF] Executing ViewResult, running view Index.
+2024-10-14 14:58:01.844 +02:00 [INF] Executed ViewResult - view Index executed in 43.9299ms.
+2024-10-14 14:58:01.845 +02:00 [INF] Executed action MyShop.Controllers.HomeController.Index (MyShop) in 48.3893ms
+2024-10-14 14:58:01.845 +02:00 [INF] Executed endpoint 'MyShop.Controllers.HomeController.Index (MyShop)'
+2024-10-14 14:58:01.847 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5092/ - 200 null text/html; charset=utf-8 83.7742ms
+2024-10-14 14:58:01.870 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5092/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-14 14:58:01.870 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5092/lib/jquery-validate/jquery.validate.js - null null
+2024-10-14 14:58:01.873 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5092/lib/jquery-validate/jquery.validate.js - 404 0 null 3.117ms
+2024-10-14 14:58:01.873 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5092/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 3.1165ms
+2024-10-14 14:58:01.874 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5092/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-14 14:58:01.874 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5092/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-14 14:58:04.306 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5092/ - null null
+2024-10-14 14:58:04.308 +02:00 [INF] Executing endpoint 'MyShop.Controllers.HomeController.Index (MyShop)'
+2024-10-14 14:58:04.308 +02:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller MyShop.Controllers.HomeController (MyShop).
+2024-10-14 14:58:04.309 +02:00 [INF] Executing ViewResult, running view Index.
+2024-10-14 14:58:04.312 +02:00 [INF] Executed ViewResult - view Index executed in 3.7549ms.
+2024-10-14 14:58:04.312 +02:00 [INF] Executed action MyShop.Controllers.HomeController.Index (MyShop) in 4.1592ms
+2024-10-14 14:58:04.313 +02:00 [INF] Executed endpoint 'MyShop.Controllers.HomeController.Index (MyShop)'
+2024-10-14 14:58:04.313 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5092/ - 200 null text/html; charset=utf-8 6.6746ms
+2024-10-14 14:58:04.324 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5092/lib/jquery-validate/jquery.validate.js - null null
+2024-10-14 14:58:04.324 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5092/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-14 14:58:04.325 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5092/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 1.3667ms
+2024-10-14 14:58:04.325 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5092/lib/jquery-validate/jquery.validate.js - 404 0 null 1.3997ms
+2024-10-14 14:58:04.325 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5092/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-14 14:58:04.325 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5092/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-14 14:58:05.715 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5092/Item/Table - null null
+2024-10-14 14:58:05.716 +02:00 [INF] Executing endpoint 'MyShop.Controllers.ItemController.Table (MyShop)'
+2024-10-14 14:58:05.719 +02:00 [INF] Route matched with {action = "Table", controller = "Item", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Table() on controller MyShop.Controllers.ItemController (MyShop).
+2024-10-14 14:58:05.748 +02:00 [INF] Executing ViewResult, running view Table.
+2024-10-14 14:58:05.763 +02:00 [INF] Executed ViewResult - view Table executed in 15.0404ms.
+2024-10-14 14:58:05.763 +02:00 [INF] Executed action MyShop.Controllers.ItemController.Table (MyShop) in 44.1718ms
+2024-10-14 14:58:05.763 +02:00 [INF] Executed endpoint 'MyShop.Controllers.ItemController.Table (MyShop)'
+2024-10-14 14:58:05.765 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5092/Item/Table - 200 null text/html; charset=utf-8 49.9653ms
+2024-10-14 14:58:05.786 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5092/images/frenchfries.jpg - null null
+2024-10-14 14:58:05.788 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5092/lib/jquery-validate/jquery.validate.js - null null
+2024-10-14 14:58:05.788 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5092/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-14 14:58:05.788 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5092/lib/jquery-validate/jquery.validate.js - 404 0 null 0.4713ms
+2024-10-14 14:58:05.788 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5092/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-14 14:58:05.788 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5092/images/chickenleg.jpg - null null
+2024-10-14 14:58:05.788 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5092/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 0.3576ms
+2024-10-14 14:58:05.788 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5092/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-14 14:58:05.790 +02:00 [INF] The file /images/chickenleg.jpg was not modified
+2024-10-14 14:58:05.790 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5092/images/chickenleg.jpg - 304 null image/jpeg 1.6749ms
+2024-10-14 14:58:05.795 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5092/images/cider.jpg - null null
+2024-10-14 14:58:05.795 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5092/images/coke.jpg - null null
+2024-10-14 14:58:05.795 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5092/images/ribs.jpg - null null
+2024-10-14 14:58:05.796 +02:00 [INF] The file /images/ribs.jpg was not modified
+2024-10-14 14:58:05.796 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5092/images/ribs.jpg - 304 null image/jpeg 0.6042ms
+2024-10-14 14:58:05.798 +02:00 [INF] Sending file. Request path: '/images/coke.jpg'. Physical path: 'C:\Users\Bruker\Desktop\Webapplikasjoner-ITPE3200\MyShop\MyShop\wwwroot\images\coke.jpg'
+2024-10-14 14:58:05.798 +02:00 [INF] Sending file. Request path: '/images/frenchfries.jpg'. Physical path: 'C:\Users\Bruker\Desktop\Webapplikasjoner-ITPE3200\MyShop\MyShop\wwwroot\images\frenchfries.jpg'
+2024-10-14 14:58:05.798 +02:00 [INF] Sending file. Request path: '/images/cider.jpg'. Physical path: 'C:\Users\Bruker\Desktop\Webapplikasjoner-ITPE3200\MyShop\MyShop\wwwroot\images\cider.jpg'
+2024-10-14 14:58:05.799 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5092/images/frenchfries.jpg - 200 52799 image/jpeg 12.5148ms
+2024-10-14 14:58:05.799 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5092/images/coke.jpg - 200 40331 image/jpeg 3.8508ms
+2024-10-14 14:58:05.799 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5092/images/cider.jpg - 200 28236 image/jpeg 4.2219ms
+2024-10-14 14:58:08.481 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5092/Item/Create - null null
+2024-10-14 14:58:08.482 +02:00 [INF] Executing endpoint 'MyShop.Controllers.ItemController.Create (MyShop)'
+2024-10-14 14:58:08.483 +02:00 [INF] Route matched with {action = "Create", controller = "Item", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller MyShop.Controllers.ItemController (MyShop).
+2024-10-14 14:58:08.484 +02:00 [INF] Executing ViewResult, running view Create.
+2024-10-14 14:58:08.507 +02:00 [INF] Executed ViewResult - view Create executed in 22.8061ms.
+2024-10-14 14:58:08.507 +02:00 [INF] Executed action MyShop.Controllers.ItemController.Create (MyShop) in 23.3521ms
+2024-10-14 14:58:08.507 +02:00 [INF] Executed endpoint 'MyShop.Controllers.ItemController.Create (MyShop)'
+2024-10-14 14:58:08.507 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5092/Item/Create - 200 null text/html; charset=utf-8 25.729ms
+2024-10-14 14:58:08.521 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5092/lib/jquery-validate/jquery.validate.js - null null
+2024-10-14 14:58:08.521 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5092/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-14 14:58:08.521 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5092/lib/jquery-validate/jquery.validate.js - 404 0 null 0.4907ms
+2024-10-14 14:58:08.521 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5092/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 0.4892ms
+2024-10-14 14:58:08.521 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5092/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-14 14:58:08.522 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5092/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-14 14:58:10.040 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5092/Customer/Table - null null
+2024-10-14 14:58:10.041 +02:00 [INF] Executing endpoint 'MyShop.Controllers.CustomerController.Table (MyShop)'
+2024-10-14 14:58:10.046 +02:00 [INF] Route matched with {action = "Table", controller = "Customer", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Table() on controller MyShop.Controllers.CustomerController (MyShop).
+2024-10-14 14:58:10.096 +02:00 [INF] Executing ViewResult, running view Table.
+2024-10-14 14:58:10.123 +02:00 [INF] Executed ViewResult - view Table executed in 27.5297ms.
+2024-10-14 14:58:10.123 +02:00 [INF] Executed action MyShop.Controllers.CustomerController.Table (MyShop) in 76.8425ms
+2024-10-14 14:58:10.123 +02:00 [INF] Executed endpoint 'MyShop.Controllers.CustomerController.Table (MyShop)'
+2024-10-14 14:58:10.123 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5092/Customer/Table - 200 null text/html; charset=utf-8 83.6738ms
+2024-10-14 14:58:10.134 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5092/lib/jquery-validate/jquery.validate.js - null null
+2024-10-14 14:58:10.134 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5092/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-14 14:58:10.135 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5092/lib/jquery-validate/jquery.validate.js - 404 0 null 0.6658ms
+2024-10-14 14:58:10.135 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5092/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 0.6645ms
+2024-10-14 14:58:10.135 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5092/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-14 14:58:10.135 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5092/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-14 14:58:11.385 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5092/Order/Table - null null
+2024-10-14 14:58:11.385 +02:00 [INF] Executing endpoint 'MyShop.Controllers.OrderController.Table (MyShop)'
+2024-10-14 14:58:11.391 +02:00 [INF] Route matched with {action = "Table", controller = "Order", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Table() on controller MyShop.Controllers.OrderController (MyShop).
+2024-10-14 14:58:11.399 +02:00 [INF] Executing ViewResult, running view Table.
+2024-10-14 14:58:11.438 +02:00 [INF] Executed ViewResult - view Table executed in 39.3128ms.
+2024-10-14 14:58:11.438 +02:00 [INF] Executed action MyShop.Controllers.OrderController.Table (MyShop) in 46.7061ms
+2024-10-14 14:58:11.438 +02:00 [INF] Executed endpoint 'MyShop.Controllers.OrderController.Table (MyShop)'
+2024-10-14 14:58:11.438 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5092/Order/Table - 200 null text/html; charset=utf-8 53.2119ms
+2024-10-14 14:58:11.457 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5092/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - null null
+2024-10-14 14:58:11.457 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5092/lib/jquery-validate/jquery.validate.js - null null
+2024-10-14 14:58:11.458 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5092/lib/jquery-validate/jquery.validate.js - 404 0 null 0.6877ms
+2024-10-14 14:58:11.458 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5092/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js - 404 0 null 0.6925ms
+2024-10-14 14:58:11.458 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5092/lib/jquery-validate/jquery.validate.js, Response status code: 404
+2024-10-14 14:58:11.458 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5092/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js, Response status code: 404
+2024-10-14 14:58:24.972 +02:00 [INF] Application is shutting down...
