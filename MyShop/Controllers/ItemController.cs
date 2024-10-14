@@ -1,13 +1,14 @@
 //Importerer grunnleggende systemfunksjoner
-using System;
+//using System;
 //Gir tilgang til generiske samlinger, som for eksempel 'List'
-using System.Collections.Generic;
+//using System.Collections.Generic;
 //Gir LINQ funksjonalitet, som gjør det enklere å jobbe med data
-using System.Linq;
+//using System.Linq;
 //Gir funksjoner for asynkron programmering
 //Altså det gjør det mulig for programmet å utføre andr eoppgaver mens det
 //venter på at en langsom operasjon som I/O skal utføres
-using System.Threading.Tasks;
+//using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 //Importerer funskjoner for å opprette kontrollere og jobbe med HTTP-forespørsler
 using Microsoft.AspNetCore.Mvc;
 //Importerer modeller som antas å være definert i 'MyShop.Models' navnerommet
