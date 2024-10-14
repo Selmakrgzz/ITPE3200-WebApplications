@@ -18,9 +18,12 @@ builder.Services.AddDbContext<ItemDbContext>(options => {
         builder.Configuration["ConnectionStrings:ItemDbContextConnection"]);
 });
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ItemDbContext>();
+builder.Services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ItemDbContext>();
 
 builder.Services.AddScoped<IItemRepository, ItemRepository>();
+
+builder.Services.AddRazorPages(); //Order of adding services does not matter
+builder.Services.AddSession();
 
 //create the logging configuration, where Line22 sets the minimum logging level to be Information
 var loggerConfiguration = new LoggerConfiguration()
@@ -52,11 +55,13 @@ if(app.Environment.IsDevelopment())
 //Gjør det mulig at applikasjonen kan servere statiske filer som bilder direkte fra
 //mappen wwwroot uten noen ekstra kode
 app.UseStaticFiles();
-
+app.UseSession();
 //It checks incoming requests for authentication credentials and establishes the user's identity for the app
 app.UseAuthentication();
+app.UseAuthorization();
 
 //Setter opp en standardrute for MVC-applikasjonen
 app.MapDefaultControllerRoute();
+app.MapRazorPages();
 
 app.Run();
