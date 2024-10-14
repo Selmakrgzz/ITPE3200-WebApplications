@@ -2,9 +2,11 @@ using Microsoft.EntityFrameworkCore;
 using MyShop.DAL;
 using Serilog;
 using Serilog.Events;
+using Microsoft.AspNetCore.Identity;
 //Oppretter en instans av WebApplicationBuilder som brukes til å konfigurere
 //applikasjonen. args er komamandolinje argumenter som sendes inn i applikasjonen
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("ItemDbContextConnection") ?? throw new InvalidOperationException("Connection string 'ItemDbContextConnection' not found.");
 //Builder.Services: Refererer til IServiceCollection, som er en samling av tjenester 
 //som applikasjonen bruker
 //AddControllersWithViews: Legger støtte for MVC i applikasjonen. Denne metoden
@@ -15,6 +17,8 @@ builder.Services.AddDbContext<ItemDbContext>(options => {
     options.UseSqlite(
         builder.Configuration["ConnectionStrings:ItemDbContextConnection"]);
 });
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ItemDbContext>();
 
 builder.Services.AddScoped<IItemRepository, ItemRepository>();
 
@@ -49,6 +53,7 @@ if(app.Environment.IsDevelopment())
 //mappen wwwroot uten noen ekstra kode
 app.UseStaticFiles();
 
+//It checks incoming requests for authentication credentials and establishes the user's identity for the app
 app.UseAuthentication();
 
 //Setter opp en standardrute for MVC-applikasjonen
