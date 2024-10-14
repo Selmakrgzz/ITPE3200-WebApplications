@@ -13,8 +13,12 @@ using Microsoft.AspNetCore.Mvc;
 //Importerer modeller som antas å være definert i 'MyShop.Models' navnerommet
 using MyShop.Models;
 using MyShop.ViewModels;
-using Microsoft.EntityFrameworkCore;
-
+/*using Microsoft.EntityFrameworkCore; is no longer needed because the direct
+database access is not done in the Controllers but in the repository.
+All direct database access via _itemDbContext is now removed. Instead, ItemController.cs
+uses the methods defined in ItemRepository to access the database.*/
+//using Microsoft.EntityFrameworkCore;
+using MyShop.DAL;
 
 //Definerer et navnrom som organiserer koden under MyShop.Controllers
 namespace MyShop.Controllers;
@@ -23,37 +27,50 @@ namespace MyShop.Controllers;
 //en baseklasse i ASP.NET Core MVC
 public class ItemController : Controller 
 {
-    //Declares a private read-only field for storing an instance of ItemDbContext
-    private readonly ItemDbContext _itemDbContext;
+    private readonly IItemRepository _itemRepository;
+    private readonly ILogger<ItemController> _logger;
 
     //It is called when an instance of ItemController is created, typically during the handling of an incomingøHTTP request
-    public ItemController(ItemDbContext ItemDbContext)
+    public ItemController(IItemRepository itemRepository, ILogger<ItemController> logger)
     {
-        _itemDbContext = ItemDbContext;
+        _itemRepository = itemRepository;
+        _logger = logger;
     }
 
     public async Task<IActionResult> Table()
     {
-        List<Item> items = await _itemDbContext.Items.ToListAsync();
+        var items = await _itemRepository.GetAll();
+        if (items == null)
+        {
+            _logger.LogError("[ItemController] Item list not found while executing _itemRepository.GetAll()");
+            return NotFound("Item list not found"); 
+        }
         var itemsViewModel = new ItemsViewModel(items, "Table");
         return View(itemsViewModel);
     }
 
     public async Task<IActionResult> Grid()
     {
-        List<Item> items = await _itemDbContext.Items.ToListAsync();
+        var items = await _itemRepository.GetAll();
+        if (items == null)
+        {
+            _logger.LogError("[ItemController] Item list not found while executing _itemRepository.GetAll()");
+            return NotFound("Item list not found"); 
+        }
         var itemsViewModel = new ItemsViewModel(items, "Grid");
         return View(itemsViewModel);
     }
     
     public async Task<IActionResult> Details(int id)
     {
-        //Finner varen med den spesifikke ID-en
-        var item = await _itemDbContext.Items.FirstOrDefaultAsync(i => i.ItemId == id);
+        var item = await _itemRepository.GetItemById(id);
         //Hvis varen ikke finnes, returner en 404
         if (item == null)
-            return NotFound();
-            //Returner visningen med detaljene for varen
+        {
+            _logger.LogError("[ItemController] Item not found for the ItemId {ItemId:0000}", id);
+            return NotFound("Item not found for the ItemId");
+        }
+        //Returner visningen med detaljene for varen
         return View(item);
     }
 
@@ -74,16 +91,15 @@ public class ItemController : Controller
         //henhold til valideringsreglene som er definert i Item-modellen.
         if (ModelState.IsValid)
         {
-            //Dette legger det nye Item-objektet til i DbSet Items, som representerer 
-            //tabellen i databasen. Dette betyr at elementet legges til i databasen
-            _itemDbContext.Items.Add(item);
-            //Denne metoden sparer alle de endringene som er gjort på DbContext 
-            //(i dette tilfellet å legge til et nytt element). Det er her elementet faktisk lagres i databasen.
-            await _itemDbContext.SaveChangesAsync();
-            //Etter at det nye elementet er lagt til i databasen, blir brukeren omdirigert til en annen 
-            //handling (action), i dette tilfellet en metode kalt Table
-            return RedirectToAction(nameof(Table));
+            bool returnOk = await _itemRepository.Create(item);
+            if (returnOk)
+            {
+                //Etter at det nye elementet er lagt til i databasen, blir brukeren omdirigert til en annen 
+                //handling (action), i dette tilfellet en metode kalt Table
+                return RedirectToAction(nameof(Table));
+            }
         }
+        _logger.LogWarning("[ItemController] Item creation failed {@item}", item);
         //Hvis ModelState.IsValid er false (f.eks. hvis skjemaet inneholder feil), vises skjemaet igjen 
         //med de inndataene brukeren allerede har fylt ut, slik at brukeren kan rette opp feilene.
         return View(item);
@@ -93,12 +109,12 @@ public class ItemController : Controller
     [HttpGet]
     public async Task<IActionResult> Update(int id) //Parameteren id representerer elementets ID i databasen som skal oppdateres.
     {
-        //Søker i databasen etter et element med den spesifikke ID-en. Find(id) henter det aktuelle elementet fra databasen.
-        var item = await _itemDbContext.Items.FindAsync(id);
+        var item = await _itemRepository.GetItemById(id);
         //Sjekker om elementet finnes i databasen
         if (item == null)
         {
-            return NotFound();
+            _logger.LogError("[ItemController] Item not found when updating the ItemId {ItemId:0000}", id);
+            return BadRequest("Item not found for the ItemId");
         }
         //Hvis elementet finnes, returneres en visning som viser skjemaet for å oppdatere elementet. 
         //item blir sendt til View slik at det kan forfylles med eksisterende data.
@@ -112,13 +128,14 @@ public class ItemController : Controller
         //Sjekker om det innsendte objektet oppfyller valideringsreglene
         if (ModelState.IsValid)
         {
-            //Oppdaterer det eksisterende elementet i databasen med nye verdier fra item
-            _itemDbContext.Items.Update(item);
-            //Lagre endringene i databasen
-            await _itemDbContext.SaveChangesAsync();
-            //Etter en vellykket oppdatering omdirigeres brukeren til en liste (Table) som viser alle elementene
-            return RedirectToAction(nameof(Table));
+            bool returnOk = await _itemRepository.Update(item);
+            if (returnOk)
+            {
+                //Etter en vellykket oppdatering omdirigeres brukeren til en liste (Table) som viser alle elementene
+                return RedirectToAction(nameof(Table));
+            }
         }
+        _logger.LogWarning("[ItemController] Item update failed {@item}", item);
         //Hvis dataene er ugyldige (ModelState er ikke valid), vises skjemaet på nytt med de 
         //opprinnelige innsendte dataene og valideringsfeil
         return View(item);
@@ -128,12 +145,12 @@ public class ItemController : Controller
     [HttpGet]
     public async Task<IActionResult> Delete(int id) //Parameteren id representerer elementets ID som skal slettes
     {
-        //Henter elementet som skal slettes fra databasen basert på ID
-        var item = await _itemDbContext.Items.FindAsync(id);
+        var item = await _itemRepository.GetItemById(id);
         //Sjekker om elementet finnes i databasen
         if (item == null)
         {
-            return NotFound();
+            _logger.LogError("[ItemController] Item not found for the ItemId {ItemId:0000}", id);
+            return BadRequest("Item not dound for the ItemId");
         }
         //Hvis elementet finnes, vises en bekreftelsesside 
         //med informasjon om elementet slik at brukeren kan bekrefte slettingen
@@ -145,18 +162,12 @@ public class ItemController : Controller
     [HttpPost]
     public async Task<IActionResult> DeleteConfirmed(int id) //Metoden mottar ID-en til elementet som skal slettes
     {
-        //Henter elementet fra databasen ved hjelp av ID-en
-        var item = await _itemDbContext.Items.FindAsync(id);
-        //Sjekker om elementet finnes i databasen
-        if (item == null)
+        bool returnOk = await _itemRepository.Delete(id);
+        if (!returnOk)
         {
-            return NotFound();
+            _logger.LogError("[ItemController] Item deletion failed for the ItemId {ItemId:0000}", id);
+            return BadRequest("Item deletion failed");
         }
-        //Fjerner elementet fra databasen
-        _itemDbContext.Items.Remove(item);
-        //Lagre slettingen i databasen
-        await _itemDbContext.SaveChangesAsync();
-        //Etter at elementet er slettet, omdirigeres brukeren til en liste som viser alle elementene
         return RedirectToAction(nameof(Table));
     }
     

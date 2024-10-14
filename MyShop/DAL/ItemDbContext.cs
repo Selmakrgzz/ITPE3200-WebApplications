@@ -1,8 +1,9 @@
 //Denne linjen importerer Entity Framework Core biblioteket. Det gir tilgang til klasser 
 //og funksjoner som trengs for å kommunisere med databasen og definere datamodeller.
 using Microsoft.EntityFrameworkCore;
+using MyShop.Models;
 
-namespace MyShop.Models;
+namespace MyShop.DAL;
 
 //Dette definerer klassen ItemDbContext, som arver fra klassen DbContext. 
 //DbContext er en grunnleggende klasse i Entity Framework Core som gir funksjonaliteten for å jobbe med databaser.

@@ -1,6 +1,7 @@
 //Gir tilgang til grunnleggende typer og funksjonalitet som er en del av .NET bibloteket
 //For eksempel String og decimal
 using System;
+using System.ComponentModel.DataAnnotations;
 //Dette definerer et navnrom kalt MyShop.Models. Navnrom brukes for å organisere og strukturere koden
 //Det hjelper med å unngå navnkonflikter mellom forskjellige klasser i større prosjekter
 //Altså, at koden tilhører Models mappen
@@ -11,13 +12,20 @@ namespace MyShop.Models
         //Automatisk generert property med type int, som representerer en unik id for Item-objektet.
         //get set betyr at vedien kan både leses og skrives
         public int ItemId { get; set; } 
+
+        [RegularExpression(@"[0-9a-zA-ZæøåÆØÅ. \-]{2,20}", ErrorMessage = "The Name must be numbers or letters, and between 2 to 20 characters.")]
+        [Display(Name = "Item name")]
         //Dette er en property med type string som representerer navnet på elementet "= string.Empty;"
         //Det angir at "Name" skal være en tom streng, altså "". Merk: "Name" propertyen er en obligatorisk
         //verdi. Dette betyr at den ikke kan ha verdien null. Vi setter derfor en standardverdi string.Empty
         //hvis det ikke står noe verdi i "Name" så er den bare tom ("") og ikke null
         public String Name { get; set; } = string.Empty;
+
+        [Range(0.01, double.MaxValue, ErrorMessage = "The Price must be greater than 0.")]
         //Dette er en property med type decimal som representerer prisen på elementet
         public decimal Price { get; set; }
+
+        [StringLength(200)]
         //Dette er en property med type string som representerer beskrivelsen på elementet
         //? etter string indikerer at denne propertyen er nullable, altså den kan ha verdien 'null'
         public string? Description { get; set; }

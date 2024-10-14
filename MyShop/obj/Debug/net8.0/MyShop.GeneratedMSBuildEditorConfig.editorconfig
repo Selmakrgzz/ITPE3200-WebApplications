@@ -9,83 +9,83 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MyShop
 build_property.RootNamespace = MyShop
-build_property.ProjectDir = C:\Users\Bruker\Desktop\WebApplikasjoner-ITPE3200\MyShop\MyShop\
+build_property.ProjectDir = C:\Users\Bruker\Desktop\Webapplikasjoner-ITPE3200\MyShop\MyShop\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Bruker\Desktop\WebApplikasjoner-ITPE3200\MyShop\MyShop
+build_property.MSBuildProjectDirectory = C:\Users\Bruker\Desktop\Webapplikasjoner-ITPE3200\MyShop\MyShop
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/Customer/Table.cshtml]
+[C:/Users/Bruker/Desktop/Webapplikasjoner-ITPE3200/MyShop/MyShop/Views/Customer/Table.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcVGFibGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/Home/index.cshtml]
+[C:/Users/Bruker/Desktop/Webapplikasjoner-ITPE3200/MyShop/MyShop/Views/Home/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/Item/Create.cshtml]
+[C:/Users/Bruker/Desktop/Webapplikasjoner-ITPE3200/MyShop/MyShop/Views/Item/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/Item/Delete.cshtml]
+[C:/Users/Bruker/Desktop/Webapplikasjoner-ITPE3200/MyShop/MyShop/Views/Item/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/Item/Details.cshtml]
+[C:/Users/Bruker/Desktop/Webapplikasjoner-ITPE3200/MyShop/MyShop/Views/Item/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/Item/Grid.cshtml]
+[C:/Users/Bruker/Desktop/Webapplikasjoner-ITPE3200/MyShop/MyShop/Views/Item/Grid.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxHcmlkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/Item/Table.cshtml]
+[C:/Users/Bruker/Desktop/Webapplikasjoner-ITPE3200/MyShop/MyShop/Views/Item/Table.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxUYWJsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/Item/Update.cshtml]
+[C:/Users/Bruker/Desktop/Webapplikasjoner-ITPE3200/MyShop/MyShop/Views/Item/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbVxVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/Order/CreateOrderItem.cshtml]
+[C:/Users/Bruker/Desktop/Webapplikasjoner-ITPE3200/MyShop/MyShop/Views/Order/CreateOrderItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ3JlYXRlT3JkZXJJdGVtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/Order/Table.cshtml]
+[C:/Users/Bruker/Desktop/Webapplikasjoner-ITPE3200/MyShop/MyShop/Views/Order/Table.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcVGFibGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/Shared/_Carousel.cshtml]
+[C:/Users/Bruker/Desktop/Webapplikasjoner-ITPE3200/MyShop/MyShop/Views/Shared/_Carousel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DYXJvdXNlbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/Shared/_CustomerTable.cshtml]
+[C:/Users/Bruker/Desktop/Webapplikasjoner-ITPE3200/MyShop/MyShop/Views/Shared/_CustomerTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DdXN0b21lclRhYmxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/Shared/_ItemCard.cshtml]
+[C:/Users/Bruker/Desktop/Webapplikasjoner-ITPE3200/MyShop/MyShop/Views/Shared/_ItemCard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9JdGVtQ2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/Shared/_ItemTable.cshtml]
+[C:/Users/Bruker/Desktop/Webapplikasjoner-ITPE3200/MyShop/MyShop/Views/Shared/_ItemTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9JdGVtVGFibGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/Shared/_OrderItemTable.cshtml]
+[C:/Users/Bruker/Desktop/Webapplikasjoner-ITPE3200/MyShop/MyShop/Views/Shared/_OrderItemTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9PcmRlckl0ZW1UYWJsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/_ViewImports.cshtml]
+[C:/Users/Bruker/Desktop/Webapplikasjoner-ITPE3200/MyShop/MyShop/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/_ViewStart.cshtml]
+[C:/Users/Bruker/Desktop/Webapplikasjoner-ITPE3200/MyShop/MyShop/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bruker/Desktop/WebApplikasjoner-ITPE3200/MyShop/MyShop/Views/Shared/_Layout.cshtml]
+[C:/Users/Bruker/Desktop/Webapplikasjoner-ITPE3200/MyShop/MyShop/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-yeuxn7t2ft

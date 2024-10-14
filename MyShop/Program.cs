@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using MyShop.Models;
+using MyShop.DAL;
+using Serilog;
+using Serilog.Events;
 //Oppretter en instans av WebApplicationBuilder som brukes til å konfigurere
 //applikasjonen. args er komamandolinje argumenter som sendes inn i applikasjonen
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +15,21 @@ builder.Services.AddDbContext<ItemDbContext>(options => {
     options.UseSqlite(
         builder.Configuration["ConnectionStrings:ItemDbContextConnection"]);
 });
+
+builder.Services.AddScoped<IItemRepository, ItemRepository>();
+
+//create the logging configuration, where Line22 sets the minimum logging level to be Information
+var loggerConfiguration = new LoggerConfiguration()
+    .MinimumLevel.Information() //levels: Trace < Information < Warning < Error < Fatal
+    .WriteTo.File($"Logs/app_{DateTime.Now:yyyyMMdd_HHmmss}.log"); //saves to a different file according to time
+
+// filters out the logging of Information Level and contains “Executed DbComand”:
+loggerConfiguration.Filter.ByExcluding(e => e.Properties.TryGetValue("SourceContext", out var value) &&
+                            e.Level == LogEventLevel.Information &&
+                            e.MessageTemplate.Text.Contains("Executed DbCommand"));
+
+var logger = loggerConfiguration.CreateLogger();
+builder.Logging.AddSerilog(logger);
 
 //Når alle tjenester og middleware er konfigurert, bygges applikasjonen ved å kalle Build()
 //Dette returnerer en WebApplication instans som kan brukes til å konfigurere
